@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// Main App Component
+import pic1 from './pictures/restaurant.jpg'; // Importing the image for the hero section
+import pic2 from './pictures/breakfast.jpg';
+import pic3 from './pictures/lunch.jpg';
 export default function App() {
   return (
     <div className="bg-white">
       <Navbar />
       <Hero />
       <Content />
-      <Footer />
+      <Footer  />
     </div>
   );
 }
@@ -85,11 +87,16 @@ const Navbar = () => {
 const Hero = () => {
   return (
     <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop')" }}>
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Add bg-black and adjust opacity for better readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div className="absolute inset-0 bg-opacity-50"></div>
+      <h1 style={{textShadow: "0px 2px 8px rgba(0,0,0,0.6)"}}/>
+      <img src={pic1} alt="Restaurant Hero" className="w-full h-full object-cover opacity-70 absolute inset-0 z-0" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4">
           Welcome to Bistro
         </h1>
+        
         <p className="text-lg md:text-xl max-w-2xl mb-8">
           Experience the finest dining with a touch of modern elegance. Our chefs create culinary masterpieces just for you.
         </p>
@@ -101,6 +108,7 @@ const Hero = () => {
   );
 };
 
+
 // Content Section to make page scrollable
 const Content = () => {
   return (
@@ -109,20 +117,20 @@ const Content = () => {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Story</h2>
         <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue.
+          Discover the charm of Bistro, an authentic English restaurant offering a taste of Ireland in every bite. Indulge in traditional English cuisine crafted with care, complemented by warm hospitality and a cozy ambiance. From hearty stews to savory pies, experience the flavors of English at Bistro. Experience the finest dining with a touch of modern elegance. Our chefs create culinary masterpieces just for you.
         </p>
         <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-          Pellentesque vel nulla. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien.
+          Founded in 2015, Bistro was born from a lifelong dream to create a dining experience that feels both elegant and intimately familiar. Nestled in the heart of the city, our restaurant is a tribute to classic European bistro culture, reimagined with a contemporary spirit. It's a place where friends, family, and food lovers can gather to celebrate the simple joy of a great meal.
         </p>
          <div className="grid md:grid-cols-2 gap-8 my-12">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop" className="rounded-lg shadow-xl w-full h-full object-cover" alt="Restaurant Interior"/>
-            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop" className="rounded-lg shadow-xl w-full h-full object-cover" alt="Restaurant Dining Area"/>
+            <img src={pic2} className="rounded-lg shadow-xl w-full h-full object-cover" alt="Restaurant Interior"/>
+            <img src={pic3} className="rounded-lg shadow-xl w-full h-full object-cover" alt="Restaurant Dining Area"/>
         </div>
         <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-          Donec quis gubergren. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          Our journey began with a simple passion for honest cooking and warm hospitality. We believe that every dish tells a story, and ours is one of dedication to craft, community, and the timeless pleasure of sharing food and wine.
         </p>
         <p className="text-gray-600 text-lg leading-relaxed">
-          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Our chef, a culinary visionary with decades of experience, masterfully blends traditional techniques with modern creativity. Each plate is thoughtfully composed to deliver a harmonious balance of flavor, texture, and artistry. From our house-baked bread to our decadent desserts, every element of your meal is crafted with care and precision in our kitchen. We invite you to taste the difference that passion and quality make.
         </p>
       </div>
     </div>
